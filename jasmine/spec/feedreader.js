@@ -44,15 +44,15 @@ $(function() {
 
         //Test to define if the menu is hidden by default
         it('is hidden by default', function() {
-          expect(body.className).toContain('menu-hidden');
+          expect($(document.body).hasClass('menu-hidden')).toBeTruthy();
         });
 
          //Test to define if the menu is controlled by the hamburger-icon
         it('is toggled on/off by hamburger-icon', function() {
           Hamburger.click();
-          expect(body.className).not.toContain('menu-hidden');
+          expect($(document.body).hasClass('menu-hidden')).toBeFalsy();
           Hamburger.click();
-          expect(body.className).toContain('menu-hidden');
+          expect($(document.body).hasClass('menu-hidden')).toBeTruthy();
         });
       });
 
